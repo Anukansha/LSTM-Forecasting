@@ -209,10 +209,10 @@ df_merged = pd.merge(df_merged, consumer_sentiment[["month_start_date","UMCSENT"
 df_merged =df_merged.drop(["month_start_date"], axis = 1)
 df_merged.to_csv("X_features.csv", index = False)
 
+tech_ind = pd.read_csv("X_features.csv") 
+vader = pd.read_csv("sentiment_using_vader.csv", engine="python")
+
 # # Visualizations
-import pandas as pd
-import matplotlib.pyplot as plt
-get_ipython().run_line_magic('matplotlib', 'inline')
 from wordcloud import WordCloud
 
 df1 = vader.loc[vader["category"]=="business economy"]
@@ -259,11 +259,6 @@ plt.axis("off")
 plt.show()
 
 # # LSTM model
-
-tech_ind = pd.read_csv("X_features.csv") 
-vader = pd.read_csv("sentiment_using_vader.csv",error_bad_lines=False, engine="python")
-
-
 # # Technical indicators
 
 vader['Date'] = pd.to_datetime(vader['Date'])
