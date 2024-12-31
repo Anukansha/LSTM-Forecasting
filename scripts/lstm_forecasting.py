@@ -7,7 +7,10 @@ This script includes:
 3. LSTM model creation, training, and evaluation.
 4. Visualizations for insights and results.
 """
-
+Contributors:
+- Divya Singh
+- Akshata Mahadik
+- Carmen Schmidt
 
 import numpy as np
 import pandas as pd
